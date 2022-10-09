@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="shortcut icon" href="https://placedog.net/1000/1000" type="image/x-icon">
+    <title>Document</title>
+</head>
+<body>
+    <div class="desafio-parte-1">
+        <h1>Desafío parte 1</h1>
+        <img id="img-1" src="https://placedog.net/1000" alt="Imagen 1" onclick="
+            var img1 = document.querySelector('#img-1')
+
+            if (img1.style.border != '2px solid red') {
+                img1.style.border = '2px solid red'
+            } else {
+                img1.style.border = '2px solid lavender';
+            }
+        ">
+    </div>
+    <div class="desafio-parte-2">
+        <h1>Desafío parte 2</h1>
+        <h3>Puedes llevar hasta 10 stickers en total</h3>
+        <p></p>
+        <div class="grid">
+            <div class="sticker">
+                <img src="http://placekitten.com/500/500" alt="">
+                <input id="input-1" type="text">
+            </div>
+            <div class="sticker">
+                <img src="http://placekitten.com/600/600" alt="">
+                <input id="input-2" type="text">
+            </div>
+            <div class="sticker">
+                <img src="http://placekitten.com/800/800" alt="">
+                <input id="input-3" type="text">
+            </div>
+        </div>
+        <p id="p-info">Ten precaución con la cantidad seleccionada</p>
+        <button onclick="
+            var pInfo = document.querySelector('#p-info')        
+            var qStickers = Number(document.querySelector('#input-1').value) + Number(document.querySelector('#input-2').value) + Number(document.querySelector('#input-3').value)
+            var qStickersExtra = qStickers - 10
+
+            if (qStickers <= 10) {
+                pInfo.innerHTML = 'Llevas ' + qStickers + ' stickers'
+            } else {
+                pInfo.innerHTML = 'Llevas demasiados stickers, llevas ' + qStickersExtra + ' de más'
+            }
+        ">¡Verificar!</button>
+    </div>
+    <div class="desafio-parte-3">
+        <h1>Desafío parte 3</h1>
+        <div class="ventana-pass">
+            <h3>Ingresa el password</h3>
+        <div class="selectors">
+            <select id="select1">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+            </select>
+            <select id="select2">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+            </select>
+            <select id="select3">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+            </select>
+        </div>
+        <button onclick="
+            var select1 = document.querySelector('#select1').value
+            var select2 = document.querySelector('#select2').value
+            var select3 = document.querySelector('#select3').value
+            var pass = select1 + select2 + select3
+            var p2 = document.querySelector('#p-2')
+
+            if (pass === '911') {
+                p2.innerHTML = 'Password 1 correcto'
+            } else if (pass === '714') {
+                p2.innerHTML = 'Password 2 correcto'
+            } else {
+                p2.innerHTML = 'Password incorrecto'
+            }
+        ">Ingresar</button>
+        <p id="p-2"></p>
+        </div>
+    </div>
+</body>
+</html>
